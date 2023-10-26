@@ -1,7 +1,8 @@
 import React from 'react';
+import { Box } from '@chakra-ui/layout';
 
 const Checkout = props => {
-    return <div className="Checkout">Checkout...</div>;
+    return <Box className="Checkout">Checkout...</Box>;
 };
 
 export default Checkout;

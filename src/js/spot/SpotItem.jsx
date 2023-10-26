@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Image from '../common/Image';
 import TextButton from '../common/TextButton';
+import { Box, Heading } from '@chakra-ui/layout';
 
 export default class SpotItem extends PureComponent {
     static propTypes = {
@@ -32,18 +33,18 @@ export default class SpotItem extends PureComponent {
         });
 
         return (
-            <div className={classes}>
+            <Box className={classes}>
                 <Image src={image} />
-                <div className="SpotItem-info">
-                    <h2>{title}</h2>
-                    <p>{distance}</p>
+                <Box className="SpotItem-info">
+                    <Heading>{title}</Heading>
+                    <Text as="p">{distance}</Text>
                     {showDetails && (
                         <TextButton onClick={this._onDetailsClick}>
                             Details
                         </TextButton>
                     )}
-                </div>
-            </div>
+                </Box>
+            </Box>
         );
     }
 }

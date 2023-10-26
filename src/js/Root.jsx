@@ -4,6 +4,7 @@ import {ConnectedRouter} from 'connected-react-router';
 import axios from 'axios';
 import createStore, {getHistory} from './store/store';
 import App from './App';
+import { ChakraProvider } from '@chakra-ui/react';
 
 export default class Root extends Component {
     state = {
@@ -37,11 +38,13 @@ export default class Root extends Component {
 
         return (
             <div className="Root">
-                <Provider store={createStore()}>
-                    <ConnectedRouter history={getHistory()}>
-                        <App spots={spots} />
-                    </ConnectedRouter>
-                </Provider>
+                <ChakraProvider>
+                    <Provider store={createStore()}>
+                        <ConnectedRouter history={getHistory()}>
+                            <App spots={spots} />
+                        </ConnectedRouter>
+                    </Provider>
+                </ChakraProvider>
             </div>
         );
     }
